@@ -1,11 +1,9 @@
-% connect to Rohde & Schwarz ZNB3020
-% 169.254.54.30
-ZNB3020 = visadev("TCPIP0::169.254.54.30::inst0::INSTR");
+clear all;
 
-writeline(ZNB3020, "*IDN?");
-idn = readline(ZNB3020);
+vna = visadev("TCPIP0::169.254.54.30::inst0::INSTR");
+
+writeline(vna, "*IDN?");
+idn = readline(vna);
 fprintf("%s\n", idn)
 
-% close connection
-delete(ZNB3020);
-clear("ZNB3020");
+
