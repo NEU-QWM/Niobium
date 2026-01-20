@@ -5,8 +5,8 @@ addpath('C:\Niobium\Expt Control\Common');
 %% ---------------- User parameters ----------------
 resource = "TCPIP0::169.254.54.30::inst0::INSTR";
 
-f0_guess   = 8.019661e9;
-expected_Q = 5e3;
+f0_guess   = 4.019661e9;
+expected_Q = 1e4;
 span       = f0_guess / expected_Q * 5;
 fstart = f0_guess - span/2;
 fstop  = f0_guess + span/2;
