@@ -3,20 +3,21 @@ clear all; clc;
 addpath('C:\Niobium\Analysis\Common');
 
 vna = visadev("TCPIP0::169.254.54.30::inst0::INSTR");
-vna.Timeout = 300;
+vna.Timeout = 3000;
 
 writeline(vna, "*IDN?");
 idn = readline(vna);
 fprintf("Connected to: %s\n", idn);
 
-f0_guess = 4.015225e9;
-expected_Q = 1e5;
+f0_guess = 8.019661e9;
+expected_Q = 5e3;
 span = f0_guess / expected_Q * 5;  % sweep 5× linewidth
 fstart = f0_guess - span/2;
 fstop  = f0_guess + span/2;
-numpoints = 501;
-ifbw = 10;
+numpoints = 2001;
+ifbw = 1;
 pow = 10;
+% avg = 10;
 
 % Configure VNA
 writeline(vna, "*RST");
@@ -27,6 +28,7 @@ writeline(vna, "DISP:WIND1:TRAC1:DEL:ALL");
 writeline(vna, "CALC1:PAR:DEF 'Trc1','S21'");
 writeline(vna, "DISP:WIND1:TRAC1:FEED 'Trc1'");
 writeline(vna, "CALC1:PAR:SEL 'Trc1'");
+% writeline(vna, sprintf("SENS1:AVER:COUN %e", avg));
 writeline(vna, sprintf("SENS1:FREQ:STAR %e", fstart));
 writeline(vna, sprintf("SENS1:FREQ:STOP %e", fstop));
 writeline(vna, sprintf("SENS1:SWE:POIN %d", numpoints));

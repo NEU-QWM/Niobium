@@ -174,7 +174,7 @@ function [tau, alpha, a, figHandles] = calibrate_resonance(f, data, show_plot, f
         subplot(2,1,1);
         plot(f, 20*log10(abs(data)), '.', 'MarkerSize', 15);
         grid on;
-        xlabel('Frequency(Hz)', 'FontSize', 14);
+        xlabel('Frequency', 'FontSize', 14);
         ylabel('|S_{21}| [dB]', 'FontSize', 14);
         set(gca, 'FontSize', 14);
         subplot(2,1,2);

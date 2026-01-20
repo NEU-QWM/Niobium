@@ -7,9 +7,9 @@ writeline(vna, "*IDN?");
 idn = readline(vna);
 fprintf("Connected to: %s\n", idn);
 
-fstart    = 10.0e9;
-fstop     = 10.10e9;
-numpoints = 1000;
+fstart    = 4.015149e9;
+fstop     = 4.015302e9;
+numpoints = 501;
 ifbw      = 10;
 pow       = 10;
 

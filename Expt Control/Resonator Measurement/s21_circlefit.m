@@ -10,8 +10,8 @@ writeline(vna, "*IDN?");
 idn = readline(vna);
 fprintf("Connected to: %s\n", idn);
 
-f0_guess = 4.015225e9;
-expected_Q = 1e5;
+f0_guess = 10.078e9;
+expected_Q = 1e3;
 span = f0_guess / expected_Q * 5;  % sweep 5× linewidth
 fstart = f0_guess - span/2;
 fstop  = f0_guess + span/2;
