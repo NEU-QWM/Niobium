@@ -17,12 +17,7 @@ fstop  = f0_guess + span/2;
 numpoints = 2001;
 ifbw = 1;
 pow = 10;
-<<<<<<< HEAD
-% avg = 10;
 
-=======
-%test comment
->>>>>>> 7ade60dac36af76e94812482e535f5e97ae73882
 % Configure VNA
 writeline(vna, "*RST");
 writeline(vna, "SYST:PRES");
