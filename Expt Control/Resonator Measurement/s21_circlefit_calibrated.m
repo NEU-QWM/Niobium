@@ -17,7 +17,7 @@ fstop  = f0_guess + span/2;
 numpoints = 501;
 ifbw = 10;
 pow = 10;
-
+%test comment
 % Configure VNA
 writeline(vna, "*RST");
 writeline(vna, "SYST:PRES");
